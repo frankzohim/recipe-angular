@@ -17,9 +17,9 @@ export class DropdownDirective {
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
 
   @HostListener('click') toggleOpen() {
-    console.log('hello');
-
     this.isOpen = !this.isOpen;
-    this.isOpen ? this.hostElem.children[1].classList.add('show') : this.hostElem.children[1].classList.remove('show');
+    this.isOpen
+      ? this.hostElem.children[1].classList.add('show')
+      : this.hostElem.children[1].classList.remove('show');
   }
 }

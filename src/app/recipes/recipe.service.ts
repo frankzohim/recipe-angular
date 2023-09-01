@@ -1,23 +1,33 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Recipe } from './recipe.model';
+import { Ingredient } from '../shared/ingredient.model';
 @Injectable()
 export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
   private recipes: Recipe[] = [
     new Recipe(
-      'Patato1',
-      'Random description',
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&webp=true&resize=600,545'
+      'Pizza',
+      'Fresh lorem ipsum rem',
+      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&webp=true&resize=600,545',
+      [
+        new Ingredient('Tomato', 10), 
+        new Ingredient('Pepe', 14)
+      ]
     ),
     new Recipe(
-      'Patato2',
-      'Random description',
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&webp=true&resize=600,545'
+      'Pasta Ring',
+      'Pasta description',
+      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&webp=true&resize=600,545',
+      [
+        new Ingredient('Pasta', 10),
+        new Ingredient('Ognion', 3)
+      ]
     ),
     new Recipe(
-      'Patato3',
-      'Random description',
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&webp=true&resize=600,545'
+      'Rice Pop',
+      'Rice pop description',
+      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&webp=true&resize=600,545',
+      [new Ingredient('Tomato', 5), new Ingredient('Rice', 2)]
     ),
   ];
 

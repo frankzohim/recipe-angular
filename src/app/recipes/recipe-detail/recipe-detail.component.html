@@ -16,7 +16,7 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <div class="dropdown"  appDropdown>
+    <div class="dropdown" appDropdown>
       <button
         class="btn btn-primary dropdown-toggle"
         type="button"
@@ -26,13 +26,20 @@
       >
         Manage
       </button>
-      <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton1" #dropdownmenuid>
-        <li><a class="dropdown-item" href="#">To shopping list</a></li>
+      <ul
+        class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton1"
+        #dropdownmenuid
+      >
+        <li>
+          <a class="dropdown-item" href="#" (click)="toShoppingList()"
+            >To shopping list</a
+          >
+        </li>
         <li><a class="dropdown-item" href="#">Edit recipe</a></li>
         <li><a class="dropdown-item" href="#">Delete recipe</a></li>
       </ul>
     </div>
-
   </div>
 </div>
 
@@ -41,5 +48,11 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-12">Ingredients</div>
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ing of recipeItem.ingredients">
+        {{ ing.name }} ({{ ing.quantity }})
+      </li>
+    </ul>
+  </div>
 </div>
