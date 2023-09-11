@@ -32,12 +32,12 @@
         #dropdownmenuid
       >
         <li>
-          <a class="dropdown-item" href="#" (click)="toShoppingList()"
+          <a class="dropdown-item" style="cursor: pointer;" (click)="toShoppingList()"
             >To shopping list</a
           >
         </li>
-        <li><a class="dropdown-item" href="#">Edit recipe</a></li>
-        <li><a class="dropdown-item" href="#">Delete recipe</a></li>
+        <li><a class="dropdown-item" style="cursor: pointer;" [routerLink]="['/recipes', id, 'edit']">Edit recipe</a></li>
+        <li><a class="dropdown-item" style="cursor: pointer;">Delete recipe</a></li>
       </ul>
     </div>
   </div>
