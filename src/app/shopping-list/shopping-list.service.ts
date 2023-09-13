@@ -7,7 +7,13 @@ export class ShoppingListService {
     new Ingredient('Orange', 7),
   ];
 
+  startedEditing = new Subject<number>();
   ingredientsUpdated = new Subject<void>();
+
+  getIngredient(index: number): Ingredient{
+    return this.ingredients[index];
+  }
+
   getIngredients() {
     return this.ingredients.slice();
   }
@@ -21,4 +27,15 @@ export class ShoppingListService {
     this.ingredients.push(...ingredientList);
     this.ingredientsUpdated.next();
   }
+
+  updateIngredient(index:number, newIngredient: Ingredient){
+    this.ingredients[index] = newIngredient;
+    this.ingredientsUpdated.next();
+  }
+
+  deleteIngredient(index:number){
+    this.ingredients.splice(index, 1);
+    this.ingredientsUpdated.next();
+  }
+
 }
