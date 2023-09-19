@@ -20,6 +20,7 @@
             aria-current="page"
             routerLinkActive="active"
             routerLink="/recipes"
+            *ngIf="isLoging"
             >Recipes</a
           >
         </li>
@@ -33,10 +34,11 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="/login"
+          *ngIf="!isLoging"
             >Login</a
           >
         </li>
-        <li class="nav-item dropdown" appDropdown>
+        <li class="nav-item dropdown" appDropdown  *ngIf="isLoging">
           <a
             class="nav-link dropdown-toggle"
             id="navbarDropdown"
@@ -66,15 +68,7 @@
           </ul>
         </li>
       </ul>
-      <form class="d-flex">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <a href=""  *ngIf="isLoging">Logout</a>
     </div>
   </div>
 </nav>
